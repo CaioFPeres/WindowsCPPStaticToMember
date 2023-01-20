@@ -11,7 +11,7 @@ public:
 
     static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     {
-        Simple* me = reinterpret_cast<Simple*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+        Window* me = reinterpret_cast<Simple*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
         if (me) return me->realWndProc(hwnd, msg, wParam, lParam);
         return DefWindowProc(hwnd, msg, wParam, lParam);
     }
